@@ -14,7 +14,7 @@ async function getGaId(): Promise<string> {
   try {
     const { getSiteSettings } = await import("@/lib/strapi");
     const settings = await getSiteSettings();
-    const data = settings.data;
+    const data: any = settings.data;
     const attrs = data.attributes ? data.attributes : data;
     return attrs.ga_measurement_id || process.env.NEXT_PUBLIC_GA_ID || "";
   } catch {
