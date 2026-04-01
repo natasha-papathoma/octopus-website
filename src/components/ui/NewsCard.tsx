@@ -7,7 +7,7 @@ interface NewsCardProps {
   title: string;
   slug: string;
   date: string;
-  excerpt: string;
+  excerpt: any;
   thumbnail: any;
   emoji?: string;
 }
