@@ -33,6 +33,8 @@ const navItems = [
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const hamburgerRef = useRef<HTMLButtonElement>(null);
+  const firstMobileLinkRef = useRef<HTMLAnchorElement>(null);
 
   const isActive = (href: string) => {
     if (href === "/library") return pathname.startsWith("/library");
@@ -58,6 +60,20 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Close mobile menu on Escape; manage focus on open/close
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setMobileOpen(false);
+        hamburgerRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    firstMobileLinkRef.current?.focus();
+    return () => window.removeEventListener("keydown", onKey);
+  }, [mobileOpen]);
 
   return (
     <nav className={`fixed left-1/2 -translate-x-1/2 w-[calc(100%-48px)] max-w-[1280px] bg-off-white rounded-full px-5 py-2.5 flex items-center justify-between z-[1000] shadow-[0_4px_30px_rgba(68,59,94,0.1)] transition-all duration-300 ${visible ? "top-4 opacity-100" : "-top-20 opacity-0"}`}>
@@ -112,21 +128,25 @@ export default function Navbar() {
 
       {/* Mobile hamburger */}
       <button
+        ref={hamburgerRef}
         onClick={() => setMobileOpen(!mobileOpen)}
         className="md:hidden p-2"
-        aria-label="Menu"
+        aria-label={mobileOpen ? "Close menu" : "Open menu"}
+        aria-expanded={mobileOpen}
+        aria-controls="mobile-menu"
       >
-        <span className="block w-[22px] h-[2px] bg-purple-dark mb-[5px] rounded-sm" />
-        <span className="block w-[22px] h-[2px] bg-purple-dark mb-[5px] rounded-sm" />
-        <span className="block w-[22px] h-[2px] bg-purple-dark rounded-sm" />
+        <span aria-hidden="true" className="block w-[22px] h-[2px] bg-purple-dark mb-[5px] rounded-sm" />
+        <span aria-hidden="true" className="block w-[22px] h-[2px] bg-purple-dark mb-[5px] rounded-sm" />
+        <span aria-hidden="true" className="block w-[22px] h-[2px] bg-purple-dark rounded-sm" />
       </button>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="absolute top-full left-0 right-0 mt-2 bg-off-white rounded-2xl shadow-xl p-4 md:hidden">
-          {navItems.map((item) => (
+        <div id="mobile-menu" className="absolute top-full left-0 right-0 mt-2 bg-off-white rounded-2xl shadow-xl p-4 md:hidden">
+          {navItems.map((item, itemIndex) => (
             <div key={item.href}>
               <Link
+                ref={itemIndex === 0 ? firstMobileLinkRef : undefined}
                 href={item.href}
                 onClick={() => setMobileOpen(false)}
                 className={`block px-4 py-3 rounded-xl text-sm font-medium ${

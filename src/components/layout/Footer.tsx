@@ -54,7 +54,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2.5">
             {footerLinks.project.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-white/70 hover:text-green transition-colors">{link.label}</Link>
+                <Link href={link.href} className="text-sm text-white/90 hover:text-green transition-colors">{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -66,7 +66,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2.5">
             {footerLinks.partners.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-white/70 hover:text-green transition-colors">{link.label}</Link>
+                <Link href={link.href} className="text-sm text-white/90 hover:text-green transition-colors">{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -78,7 +78,7 @@ export default function Footer() {
           <ul className="flex flex-col gap-2.5">
             {footerLinks.legal.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-sm text-white/70 hover:text-green transition-colors">{link.label}</Link>
+                <Link href={link.href} className="text-sm text-white/90 hover:text-green transition-colors">{link.label}</Link>
               </li>
             ))}
           </ul>
@@ -95,7 +95,7 @@ export default function Footer() {
             height={53}
             className="h-14 w-auto shrink-0"
           />
-          <p className="text-xs text-white/70/70 leading-relaxed">
+          <p className="text-xs text-white/90 leading-relaxed">
             Funded by the European Union. Views and opinions expressed are however those of the author(s) only and do not necessarily reflect those of the European Union or the Tempus Public Foundation. Neither the European Union nor the Tempus Public Foundation can be held responsible for them.
           </p>
         </div>
@@ -103,8 +103,8 @@ export default function Footer() {
 
       {/* Bottom bar */}
       <div className="max-w-[1200px] mx-auto border-t border-white/[0.08] pt-6 flex flex-wrap justify-between items-center gap-4">
-        <p className="text-xs text-white/70">© 2025–2028 Octopus Project. All rights reserved.</p>
-        <p className="text-xs text-white/70/50">Project No. KA220-SCH-063BB39C</p>
+        <p className="text-xs text-white/90">© 2025–2028 Octopus Project. All rights reserved.</p>
+        <p className="text-xs text-white/85">Project No. KA220-SCH-063BB39C</p>
       </div>
     </footer>
   );

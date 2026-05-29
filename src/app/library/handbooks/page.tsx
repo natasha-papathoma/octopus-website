@@ -22,9 +22,9 @@ export default function HandbooksPage() {
         </div>
         <div className="flex gap-3 flex-wrap mb-16">
           {languages.map((l) => (
-            <a key={l.label} href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream border-2 border-cream-dark text-purple-dark font-semibold text-sm transition-all hover:bg-green hover:border-green hover:-translate-y-0.5">
-              📥 {l.flag} {l.label} (coming soon)
-            </a>
+            <button key={l.label} type="button" disabled aria-disabled="true" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream border-2 border-cream-dark text-purple-dark font-semibold text-sm transition-all hover:bg-green hover:border-green hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-cream disabled:hover:border-cream-dark disabled:hover:translate-y-0">
+              <span aria-hidden="true">📥 {l.flag}</span> {l.label} (coming soon)
+            </button>
           ))}
         </div>
 
@@ -34,9 +34,9 @@ export default function HandbooksPage() {
         </div>
         <div className="flex gap-3 flex-wrap">
           {languages.map((l) => (
-            <a key={l.label} href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream border-2 border-cream-dark text-purple-dark font-semibold text-sm transition-all hover:bg-green hover:border-green hover:-translate-y-0.5">
-              ▶️ {l.flag} {l.label} (coming soon)
-            </a>
+            <button key={l.label} type="button" disabled aria-disabled="true" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream border-2 border-cream-dark text-purple-dark font-semibold text-sm transition-all hover:bg-green hover:border-green hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-70 disabled:hover:bg-cream disabled:hover:border-cream-dark disabled:hover:translate-y-0">
+              <span aria-hidden="true">▶️ {l.flag}</span> {l.label} (coming soon)
+            </button>
           ))}
         </div>
       </section>

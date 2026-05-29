@@ -68,12 +68,13 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="min-h-screen rounded-b-[48px] pt-[170px] pb-20 px-12 flex flex-col justify-center relative overflow-hidden">
+      <section className="min-h-[80vh] md:min-h-screen rounded-b-[48px] pt-[170px] pb-20 px-12 flex flex-col justify-center relative overflow-hidden">
         <Image
           src="/images/hero-image-4.jpg"
           alt=""
           fill
           priority
+          quality={85}
           sizes="100vw"
           className="object-cover -z-10"
         />
@@ -118,10 +119,10 @@ export default async function HomePage() {
          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10"> 
           {overviewCards.map((c) => (
             <Link key={c.href} href={c.href} className="group block bg-off-white rounded-3xl p-8 border-2 border-transparent transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[0_20px_48px_rgba(68,59,94,0.1)] hover:border-green">
-              <div className={`w-[52px] h-[52px] rounded-2xl ${c.bg} ${c.color} flex items-center justify-center text-2xl mb-5`}>{c.icon}</div>
+              <div aria-hidden="true" className={`w-[52px] h-[52px] rounded-2xl ${c.bg} ${c.color} flex items-center justify-center text-2xl mb-5`}>{c.icon}</div>
               <h3 className="text-lg font-semibold mb-2.5">{c.title}</h3>
               <p className="text-sm text-text-mid leading-relaxed">{c.desc}</p>
-              <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-purple group-hover:text-green-dark transition-colors">{c.link} <span>↗</span></span>
+              <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-purple group-hover:text-green-dark transition-colors">{c.link} <span aria-hidden="true">↗</span></span>
             </Link>
           ))}
         </div>
