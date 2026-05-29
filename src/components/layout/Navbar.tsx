@@ -13,7 +13,7 @@ const navItems = [
     children: [
       { label: "The Octopus E-book", href: "/library/ebook" },
       { label: "Handbooks & Tutorials", href: "/library/handbooks" },
-      { label: "Good Practices", href: "/library/good-practices" },
+      { label: "Success Stories", href: "/library/success-stories" },
     ],
   },
   { label: "Community", href: "/community" },

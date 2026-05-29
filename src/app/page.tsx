@@ -9,7 +9,7 @@ import { fallbackPartners } from "@/lib/fallback-data";
 
 const overviewCards = [
   { icon: "📊", title: "Research", desc: "Five work packages spanning 30 months — from concept and methodology through gamification design, platform development, and teacher training.", href: "/research", link: "View roadmap", bg: "bg-blue/10", color: "text-blue" },
-  { icon: "📚", title: "Library", desc: "The Octopus E-book in four languages, practical handbooks and video tutorials for educators, and good practices from our pilot phases.", href: "/library", link: "Browse resources", bg: "bg-green/10", color: "text-green-dark" },
+  { icon: "📚", title: "Library", desc: "The Octopus E-book in four languages, practical handbooks and video tutorials for educators, and success stories from our pilot phases.", href: "/library", link: "Browse resources", bg: "bg-green/10", color: "text-green-dark" },
   { icon: "🤝", title: "Community", desc: "Updates on the Training of Trainers sessions in Istanbul, transnational meetings, and digital feedback forms for teachers and students.", href: "/community", link: "Join the community", bg: "bg-red/10", color: "text-red" },
 ];
 
@@ -68,34 +68,45 @@ export default async function HomePage() {
 
   return (
     <>
-      <section className="min-h-screen bg-purple rounded-b-[48px] pt-[170px] pb-20 px-12 flex flex-col justify-center relative overflow-hidden">
-        <div className="absolute -top-[200px] -right-[200px] w-[700px] h-[700px] bg-[radial-gradient(circle,rgba(162,198,23,0.15)_0%,transparent_70%)] rounded-full animate-[float_12s_ease-in-out_infinite]" />
-        <div className="absolute -bottom-[150px] -left-[100px] w-[500px] h-[500px] bg-[radial-gradient(circle,rgba(0,145,211,0.12)_0%,transparent_70%)] rounded-full animate-[float_15s_ease-in-out_infinite_reverse]" />
+      <section className="min-h-screen rounded-b-[48px] pt-[170px] pb-20 px-12 flex flex-col justify-center relative overflow-hidden">
+        <Image
+          src="/images/hero-image-4.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover -z-10"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-dark/80 via-purple-dark/45 to-transparent -z-10" />
         <div className="max-w-[1200px] mx-auto w-full relative z-10">
           <p className="text-purple-pale text-sm tracking-[4px] uppercase mb-3">Erasmus+ KA220-SCH</p>
           <h1 className="text-white text-6xl md:text-7xl lg:text-[6.5rem] font-bold leading-none mb-5 -tracking-wide">Octopus</h1>
-          <p className="text-purple-pale text-lg max-w-[580px] leading-relaxed mb-4">Offering Cross-disciplinary Training for Inclusive Preparation for School Exams — enhancing teachers&apos; interdisciplinary competencies through gamification while supporting SEN students and learners from diverse backgrounds.</p>
-          <p className="text-white/40 text-sm mb-9">Sept 2025 – Feb 2028 · 30 months · 4 partners across Europe</p>
+          <p className="text-white text-lg max-w-[580px] leading-relaxed mb-4">Offering Cross-disciplinary Training for Inclusive Preparation for School Exams — enhancing teachers&apos; interdisciplinary competencies through gamification while supporting SEN students and learners from diverse backgrounds.</p>
+          <p className="text-white/85 text-sm mb-9">Sept 2025 – Feb 2028 · 30 months · 4 partners across Europe</p>
+          {/* Hero CTA buttons — temporarily hidden until target pages exist
           <div className="flex gap-3.5 flex-wrap">
             <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-green text-purple-dark font-semibold text-sm transition-all hover:bg-green-dark hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(162,198,23,0.35)]">I am a student <span>↗</span></Link>
             <Link href="/about" className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-white/15 text-white font-semibold text-sm backdrop-blur-sm transition-all hover:bg-white/25 hover:-translate-y-0.5">I am a teacher <span>↗</span></Link>
           </div>
+          */}
         </div>
       </section>
 
       <div className="py-16 px-12 text-center">
         <p className="text-xs uppercase tracking-[3px] text-text-light font-semibold mb-8">A partnership across four organisations</p>
-        <div className="grid grid-cols-2 gap-5 max-w-[700px] mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-[700px] mx-auto">
           {partners.map((p) => {
             const logoUrl = p.logo?.url ? (p.logo.url.startsWith("http") ? p.logo.url : `${STRAPI_URL}${p.logo.url}`) : null;
             return (
-              <div key={p.id || p.name} className="flex items-center gap-3 px-5 py-3.5 bg-off-white rounded-2xl shadow-[0_2px_12px_rgba(68,59,94,0.06)] font-semibold text-text-mid text-sm">
+              <div key={p.id || p.name} className="flex items-center gap-3 px-5 py-3.5 bg-off-white rounded-2xl shadow-[0_2px_12px_rgba(68,59,94,0.06)] font-semibold text-text-mid text-sm text-left">
                 {logoUrl ? (
-                  <Image src={logoUrl} alt={p.name} width={32} height={32} className="h-8 w-8 object-contain" unoptimized />
+                  <Image src={logoUrl} alt={p.name} width={32} height={32} className="h-8 w-8 shrink-0 object-contain" unoptimized />
                 ) : (
-                  <div className={`w-2.5 h-2.5 rounded-full ${colorMap[p.country] || "bg-purple"}`} />
+                  <div className={`w-2.5 h-2.5 shrink-0 rounded-full ${colorMap[p.country] || "bg-purple"}`} />
                 )}
-                {p.name} <span className="text-xs text-text-light font-normal">{p.country}</span>
+                <span className="min-w-0 flex-1 break-words leading-snug">
+                  {p.name} <span className="text-xs text-text-light font-normal">{p.country}</span>
+                </span>
               </div>
             );
           })}

@@ -8,19 +8,23 @@ const languages = [
   { flag: "🇵🇱", label: "Polish" },
 ];
 
-export default function HandbooksPage() {
+export default function SuccessStoriesPage() {
   return (
     <>
-      <PageHero title="Handbooks & Video Tutorials" description="Practical guides and video walkthroughs for educators implementing inclusive gamification strategies." bgColor="#E94F35" />
+      <PageHero title="Success Stories" description="Success stories and best practices from piloting across four countries." bgColor="#0091D3" />
       <section className="px-12 py-24 max-w-[1300px] mx-auto">
         <Link href="/library" className="inline-flex items-center gap-1.5 text-sm font-semibold text-purple hover:text-green-dark transition-colors mb-6">
           ← Back to Library
         </Link>
-        <h2 className="text-3xl font-bold mb-6">Teacher&apos;s Guide</h2>
+        <h2 className="text-3xl font-bold mb-6">Real-World Impact</h2>
         <div className="text-base text-text-mid leading-relaxed max-w-[800px] space-y-4 mb-8">
-          <p>A structured manual with step-by-step instructions on using the Octopus platform and applying the gamified methodology. Covers platform functionalities, creating activities through the back office, and adapting content for SEN students.</p>
+          <p>During piloting (WP2 and WP5), teachers across Hungary, Greece, Türkiye, and Poland test the methodology and platform in real classrooms — involving 200+ students and 60+ teachers.</p>
+          <p>Workshops introduce the Octopus concept, after which teachers test the methods in their classrooms. We collect and document success stories as practical case studies.</p>
+          <p>Special attention is given to SEN students and learners from diverse cultural backgrounds. Evaluation uses learning diaries, structured surveys, and feedback sessions.</p>
         </div>
-        <div className="flex gap-3 flex-wrap mb-16">
+
+        <h3 className="text-2xl font-bold mb-4">Pilot Report</h3>
+        <div className="flex gap-3 flex-wrap mb-12">
           {languages.map((l) => (
             <a key={l.label} href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream border-2 border-cream-dark text-purple-dark font-semibold text-sm transition-all hover:bg-green hover:border-green hover:-translate-y-0.5">
               📥 {l.flag} {l.label} (coming soon)
@@ -28,14 +32,11 @@ export default function HandbooksPage() {
           ))}
         </div>
 
-        <h2 className="text-3xl font-bold mb-6">Video Tutorials</h2>
-        <div className="text-base text-text-mid leading-relaxed max-w-[800px] space-y-4 mb-8">
-          <p>At least 5 instructional video guides integrated into the platform — practical demonstrations showing educators how to navigate the student portal, set up activities, and use gamification features effectively. English with multilingual subtitles.</p>
-        </div>
+        <h3 className="text-2xl font-bold mb-4">Success Stories Collection</h3>
         <div className="flex gap-3 flex-wrap">
           {languages.map((l) => (
             <a key={l.label} href="#" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-cream border-2 border-cream-dark text-purple-dark font-semibold text-sm transition-all hover:bg-green hover:border-green hover:-translate-y-0.5">
-              ▶️ {l.flag} {l.label} (coming soon)
+              📥 {l.flag} {l.label} (coming soon)
             </a>
           ))}
         </div>

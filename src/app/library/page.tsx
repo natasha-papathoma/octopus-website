@@ -5,7 +5,7 @@ import SectionHeader from "@/components/ui/SectionHeader";
 const resources = [
   { icon: "📖", type: "E-Book", typeColor: "text-purple", title: "The Octopus E-book", desc: "The comprehensive guidebook — eras, aspects, mind maps, keywords, and methodology for diverse learners.", tags: ["EN", "HU", "TR", "PL"], href: "/library/ebook" },
   { icon: "🎬", type: "Guide + Videos", typeColor: "text-red", title: "Handbooks & Tutorials", desc: "Step-by-step teacher's guide plus instructional video tutorials for the platform.", tags: ["Video", "PDF", "Multilingual"], href: "/library/handbooks" },
-  { icon: "⭐", type: "Case Studies", typeColor: "text-blue", title: "Good Practices", desc: "Success stories from piloting across Hungary, Greece, Türkiye, and Poland.", tags: ["Reports", "Diaries"], href: "/library/good-practices" },
+  { icon: "⭐", type: "Case Studies", typeColor: "text-blue", title: "Success Stories", desc: "Success stories from piloting across Hungary, Greece, Türkiye, and Poland.", tags: ["Reports", "Diaries"], href: "/library/success-stories" },
 ];
 
 export default function LibraryPage() {

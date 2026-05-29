@@ -33,7 +33,7 @@ export default function Footer() {
             Offering Cross-disciplinary Training for Inclusive Preparation for
             School Exams. An Erasmus+ KA220-SCH partnership.
           </p>
-          {/* Social links */}
+          {/* Social links — temporarily hidden until real social accounts exist
           <div className="flex gap-3 mt-4">
             {["f", "ig", "in", "▶"].map((icon, i) => (
               <a
@@ -45,6 +45,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
+          */}
         </div>
 
         {/* Project links */}
