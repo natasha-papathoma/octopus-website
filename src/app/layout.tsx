@@ -3,6 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import GoogleAnalytics from "@/components/layout/GoogleAnalytics";
+import CookieBanner from "@/components/layout/CookieBanner";
 import { fallbackSiteSettings } from "@/lib/fallback-data";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <Navbar />
         <main id="main-content">{children}</main>
         <Footer />
+        <CookieBanner gaId={gaId} />
       </body>
     </html>
   );

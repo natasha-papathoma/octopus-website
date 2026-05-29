@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import ManageCookiesButton from "./ManageCookiesButton";
 
 const footerLinks = {
   project: [
@@ -18,6 +19,7 @@ const footerLinks = {
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
     { label: "GDPR Compliance", href: "/gdpr" },
+    { label: "Cookies", href: "/cookies" },
     { label: "Accessibility", href: "/accessibility" },
   ],
 };
@@ -81,6 +83,9 @@ export default function Footer() {
                 <Link href={link.href} className="text-sm text-white/90 hover:text-green transition-colors">{link.label}</Link>
               </li>
             ))}
+            <li>
+              <ManageCookiesButton />
+            </li>
           </ul>
         </div>
       </div>
