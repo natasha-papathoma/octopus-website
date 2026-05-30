@@ -32,13 +32,12 @@ export default function CookiesPage() {
 
           <h2 className="text-2xl font-bold text-text-dark pt-4">Cookies on This Site</h2>
           <p>
-            <strong>Currently, this website sets no cookies.</strong> The OCTOPUS project is in its
-            early development phase and has not yet enabled analytics. When Google Analytics is
-            connected in the future, the cookies listed below will be set <em>only</em> with your
-            explicit consent through the banner that will appear on your first visit.
+            We use Google Analytics 4 to understand how educators use our resources. These cookies
+            are set <em>only</em> with your explicit consent, given through the banner that appears
+            on your first visit.
           </p>
 
-          <h3 className="text-xl font-bold text-text-dark pt-2">Planned analytics cookies</h3>
+          <h3 className="text-xl font-bold text-text-dark pt-2">Analytics cookies</h3>
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
@@ -66,27 +65,21 @@ export default function CookiesPage() {
             </table>
           </div>
           <p>
-            Google Analytics 4 will be configured with IP anonymisation enabled, and Google Signals
-            and advertising features disabled. No personally identifiable information is sent to
-            Google.
+            Google Analytics 4 is configured with IP anonymisation enabled, and Google Signals and
+            advertising features disabled. No personally identifiable information is sent to Google.
           </p>
 
           <h2 className="text-2xl font-bold text-text-dark pt-4">How to Manage Your Consent</h2>
           <p>
-            Once analytics is enabled, you will see a small banner at the bottom of the page on
-            your first visit, with two options: <strong>Accept</strong> (analytics cookies will be
-            set) or <strong>Decline</strong> (no cookies set, no data collected). You can change
-            your decision at any time by clicking the button below or the &ldquo;Manage
-            cookies&rdquo; link in the site footer.
+            On your first visit, a small banner appears at the bottom of the page with two options:{" "}
+            <strong>Accept</strong> (analytics cookies will be set) or <strong>Decline</strong> (no
+            cookies set, no data collected). You can change your decision at any time using the
+            button below.
           </p>
           <p>
             <ManageCookiesButton className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-green text-purple-dark font-semibold text-sm transition-all hover:bg-green-dark hover:-translate-y-0.5">
               Manage my cookie preferences
             </ManageCookiesButton>
-          </p>
-          <p className="text-sm text-text-light italic">
-            Note: this button has no visible effect today since analytics is not yet enabled. It
-            will become active once the OCTOPUS team connects Google Analytics.
           </p>
 
           <h2 className="text-2xl font-bold text-text-dark pt-4">Browser-Level Controls</h2>

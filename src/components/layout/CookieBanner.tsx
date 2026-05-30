@@ -31,10 +31,7 @@ export default function CookieBanner({ gaId }: Props) {
       <div className="text-sm text-text-mid leading-relaxed">
         <p className="font-semibold text-text-dark mb-1">We&apos;d like to use cookies</p>
         <p>
-          We use Google Analytics to understand how educators use our resources. With your consent,
-          two cookies (<code className="font-mono text-xs">_ga</code>,{" "}
-          <code className="font-mono text-xs">_ga_…</code>) are stored on your device for up to
-          2 years. You can change your decision anytime via the Cookie Policy in the footer.{" "}
+          We use cookies to understand how educators use our resources.{" "}
           <Link href="/cookies" className="text-purple hover:text-green-dark underline">
             Read more
           </Link>
